@@ -1,0 +1,422 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f8fb; /* Soft light background for the body */
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: #2C3E50; /* Darker color for better contrast */
+    font-weight: 700; /* Increased font weight for headers */
+    margin: 0;
+}
+
+/* Header Styles */
+.dashboard-header {
+    background: url('blue-background.png') no-repeat center center;
+    background-size: cover; 
+    height: 250px; /* Adjusted height for better balance */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-logo {
+    max-width: 160px; 
+    height: auto;
+}
+
+/* Navigation Styles */
+.dashboard-nav {
+    background-color: #ffffff; /* Clean white background */
+    padding: 18px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.dashboard-nav li {
+    display: inline-block;
+}
+
+.dashboard-nav a {
+    text-decoration: none;
+    color: #2C3E50;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 12px 30px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.dashboard-nav ul li a.active {
+    background: #2980B9;
+    color: white;
+    border-radius: 5px;
+}
+
+.dashboard-nav a:hover {
+    background-color: #2980B9; /* Lighter blue on hover */
+    color: white;
+    transform: translateY(-3px); 
+}
+
+/* Content Section Styles */
+.dashboard-content {
+    padding: 40px 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.dashboard-content h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #2980B9;
+    font-weight: 700;
+}
+
+/* Cards */
+.metrics-cards, .feedback {
+    display:flex;
+    gap: 30px;
+    justify-content: space-between;
+    flex-wrap:inherit;
+}
+
+.metric-card, .feedback-card {
+    background-color: #ffffff;
+    padding: 25px;
+    border: 1px solid #e4e9f1;
+    border-radius: 12px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.metric-card:hover, .feedback-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.metric-card h3, .feedback-card h3 {
+    font-size: 1.5rem;
+    color: #2980B9;
+    margin-bottom: 20px;
+}
+
+.metric-card p, .feedback-card p {
+    font-size: 1.75rem;
+    color: #27AE60;
+    margin-top: 12px;
+}
+
+/* Action Buttons */
+.respond-btn, .submit-btn {
+    display: block;  /* Ensure it takes its own line */
+    margin-top: 20px;  /* Add spacing from the feedback cards */
+    padding: 14px 25px;
+    font-size: 1.1rem;
+    background-color: #2980B9;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.respond-btn:hover, .submit-btn:hover {
+    background-color: #163266;
+    transform: translateY(-4px);
+}
+
+/* Table Styles */
+.users-table, .orders-table, .products-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+}
+
+.users-table th, .orders-table th, .products-table th, 
+.users-table td, .orders-table td, .products-table td {
+    padding: 14px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 1.1rem;
+}
+
+.users-table th, .orders-table th, .products-table th {
+    background-color: #f4f6f9;
+    font-weight: 600;
+}
+
+.users-table tr:nth-child(even), .orders-table tr:nth-child(even), .products-table tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+.users-table .view-btn, .orders-table .accept-btn, .orders-table .reject-btn, 
+.products-table .edit-btn, .products-table .delete-btn {
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #2980B9;
+    text-decoration: none;
+    border-radius: 6px;
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.users-table .view-btn:hover, .orders-table .accept-btn:hover, 
+.orders-table .reject-btn:hover, .products-table .edit-btn:hover, 
+.products-table .delete-btn:hover {
+    background-color: #e2f1fc;
+    transform: translateY(-3px);
+}
+
+/* Action Buttons - Accept & Reject */
+.orders-table .accept-btn {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.orders-table .accept-btn:hover {
+    background-color: #27ae60;
+}
+
+.orders-table .reject-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.orders-table .reject-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Add Product Form */
+.add-product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 35px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e4e9f1;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.add-product-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-product-form label {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.add-product-form input, .add-product-form textarea {
+    padding: 15px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+.add-product-form input[type="number"] {
+    width: 240px;
+}
+
+.add-product-form .submit-btn {
+    padding: 16px 28px;
+    font-size: 1.1rem;
+    background-color: #2980B9;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.add-product-form .submit-btn:hover {
+    background-color: #0b4f7c;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .dashboard-nav ul {
+        gap: 18px;
+    }
+
+    .dashboard-header {
+        height: 220px;
+    }
+
+    .dashboard-content {
+        padding: 25px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-header {
+        flex-direction: column;
+    }
+
+    .dashboard-nav ul {
+        flex-direction: column;
+    }
+
+    .dashboard-nav li {
+        max-width: none;
+    }
+
+    .dashboard-logo {
+        max-width: 130px;
+    }
+
+    .metric-card, .feedback-card {
+        width: 48%;
+        margin-bottom: 20px;
+    }
+
+    .metrics-cards, .feedback {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .metric-card p, .feedback-card p {
+        font-size: 1.4rem;
+    }
+
+    .dashboard-logo {
+        max-width: 100px;
+    }
+
+    .add-product-form input, .add-product-form textarea {
+        font-size: 0.95rem;
+        padding: 12px;
+    }
+
+    .add-product-form .submit-btn {
+        font-size: 1rem;
+    }
+
+    .products-table th, .products-table td {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.settings-section {
+    margin-bottom: 30px;
+}
+
+.settings-section h2 {
+    color: #444;
+}
+
+.setting-item {
+    margin-bottom: 15px;
+}
+
+.setting-item label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.setting-item select,
+.setting-item input[type="checkbox"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.setting-item input[type="checkbox"] {
+    width: auto;
+}
+
+.setting-item button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+}
+
+.setting-item button:hover {
+    background-color: #45a049;
+}
+
+
+/* Modal styles */
+#userModal {
+    display: none; 
+    position: fixed; /* Fixed position */
+    z-index: 1; /* Make sure it sits on top of other elements */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    overflow: auto; /* Allow scrolling if needed */
+    padding-top: 100px; /* Space from the top */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%; /* Adjust width of the modal */
+    max-width: 600px; /* Max width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for better visibility */
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover, .close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+    
