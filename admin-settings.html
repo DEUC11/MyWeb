@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Settings</title>
+    <link rel="stylesheet" href="css/dashboards.css" />
+  </head>
+  <body>
+    <div class="dashboard admin-dashboard">
+      <header class="dashboard-header">
+        <img src="KINGS.png" alt="Logo" class="dashboard-logo" />
+      </header>
+      <nav class="dashboard-nav">
+        <ul>
+          <li><a href="admin.html">Dashboard</a></li>
+          <li><a href="admin-users.html">Users</a></li>
+          <li><a href="admin-products.html">Products</a></li>
+          <li><a href="admin-orders.html">Orders</a></li>
+          <li><a href="admin-settings.html" class="active">Settings</a></li>
+        </ul>
+      </nav>
+
+      <div class="container">
+        <h1 id="settings-title">Admin Settings</h1>
+
+        <!-- System Settings -->
+        <div class="settings-section">
+          <h2 id="system-settings-title">System Settings</h2>
+          <div class="setting-item">
+            <label for="timezone" id="timezone-label">Time Zone</label>
+            <select id="timezone">
+              <option value="UTC">UTC</option>
+              <option value="EST">Eastern Standard Time</option>
+              <option value="PST">Pacific Standard Time</option>
+              <option value="CST">Central Standard Time</option>
+            </select>
+          </div>
+          <div class="setting-item">
+            <label for="language" id="language-label">Language</label>
+            <select id="language">
+              <option value="en">English</option>
+              <option value="tl">Tagalog</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Notification Settings -->
+        <div class="settings-section">
+          <h2 id="notification-settings-title">Notification Settings</h2>
+          <div class="setting-item">
+            <label for="email-notifications" id="email-notifications-label"
+              >Email Notifications</label
+            >
+            <input type="checkbox" id="email-notifications" checked /> Receive
+            email notifications
+          </div>
+          <div class="setting-item">
+            <label for="sms-notifications" id="sms-notifications-label"
+              >SMS Notifications</label
+            >
+            <input type="checkbox" id="sms-notifications" /> Receive SMS
+            notifications
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="settings-section">
+          <button type="button" id="saveChangesBtn">Save Changes</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="javascript/admin-settings.js">
+      
+    </script>
+  </body>
+</html>

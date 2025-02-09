@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/dashboards.css">
+    <script src="javascript/admin.js"></script>
+</head>
+<body>
+    <div class="dashboard admin-dashboard">
+        <header class="dashboard-header">
+            <img src="KINGS.png" alt="Logo" class="dashboard-logo">
+        </header>
+        <nav class="dashboard-nav">
+            <ul>
+                <li><a href="admin.html">Dashboard</a></li>
+                <li><a href="admin-users.html">Users</a></li>
+                <li><a href="admin-products.html">Products</a></li>
+                <li><a href="admin-orders.html">Orders</a></li>
+                <li><a href="admin-settings.html">Settings</a></li>
+            </ul>
+        </nav>
+        <main class="dashboard-content">
+            <!-- Sales Metrics Section -->
+            <section class="metrics-overview">
+                <h2>Sales Metrics</h2>
+                <div class="metrics-cards">
+                    <div class="metric-card">
+                        <h3>Total Sales</h3>
+                        <p id="total-sales">$0</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Number of Orders</h3>
+                        <p id="num-orders">0</p>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Revenue</h3>
+                        <p id="revenue">$0</p>
+                    </div>
+                </div>
+            </section>
+        
+            <!-- Customer Feedback -->
+            <section class="customer-feedback">
+                <h2>Customer Feedback</h2>
+                <div class="feedback">
+                    <div class="feedback-card">
+                        <h3>Product Ratings</h3>
+                        <p id="product-ratings">4.5</p>
+                    </div>
+                    <div class="feedback-card">
+                        <h3>Recent Reviews</h3>
+                        <p id="recent-reviews">"Great product!"</p>
+                    </div>
+                </div>
+                <!-- Move the button outside of the feedback div -->
+                <button class="respond-btn" onclick="toggleResponseForm()">Respond to Reviews</button>
+
+                <div id="response-form" style="display: none; margin-top: 10px;">
+                    <h3>Write a Response</h3>
+                    <textarea id="response-text" rows="4" cols="50" placeholder="Type your response here..."></textarea>
+                    <br>
+                    <button onclick="submitResponse()">Submit Response</button>
+                </div>
+            </section>
+
+        </main>
+    </div>
+</body>
+</html>
