@@ -3,40 +3,50 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f8fb; /* Soft light background for the body */
+    background-color: #f4f8fb;
     color: #333;
     line-height: 1.6;
 }
 
 h1, h2, h3 {
-    color: #2C3E50; /* Darker color for better contrast */
-    font-weight: 700; /* Increased font weight for headers */
+    color: #2C3E50;
+    font-weight: 700;
     margin: 0;
 }
 
-/* Header Styles */
+/* Fixed Header Styles */
 .dashboard-header {
     background: url('blue-background.png') no-repeat center center;
-    background-size: cover; 
-    height: 250px; /* Adjusted height for better balance */
+    background-size: cover;
+    height: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Fixed positioning */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it sits on top */
 }
 
 .dashboard-logo {
-    max-width: 160px; 
+    max-width: 160px;
     height: auto;
 }
 
-/* Navigation Styles */
+/* Fixed Navigation Styles */
 .dashboard-nav {
-    background-color: #ffffff; /* Clean white background */
+    background-color: #ffffff;
     padding: 18px 0;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Fixed positioning */
+    top: 250px; /* Place below the header */
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    z-index: 999; /* Ensure it sits below the header */
 }
 
 .dashboard-nav ul {
@@ -69,19 +79,19 @@ h1, h2, h3 {
 }
 
 .dashboard-nav a:hover {
-    background-color: #2980B9; /* Lighter blue on hover */
+    background-color: #2980B9;
     color: white;
-    transform: translateY(-3px); 
+    transform: translateY(-3px);
 }
 
-/* Content Section Styles */
+/* Content Section Styles (Adjust for Fixed Header and Nav) */
 .dashboard-content {
     padding: 40px 70px;
     display: flex;
     flex-direction: column;
     gap: 40px;
     max-width: 1200px;
-    margin: auto;
+    margin: 300px auto 0; /* Add margin-top to avoid overlap */
 }
 
 .dashboard-content h2 {
@@ -93,10 +103,10 @@ h1, h2, h3 {
 
 /* Cards */
 .metrics-cards, .feedback {
-    display:flex;
+    display: flex;
     gap: 30px;
     justify-content: space-between;
-    flex-wrap:inherit;
+    flex-wrap: inherit;
 }
 
 .metric-card, .feedback-card {
@@ -129,8 +139,8 @@ h1, h2, h3 {
 
 /* Action Buttons */
 .respond-btn, .submit-btn {
-    display: block;  /* Ensure it takes its own line */
-    margin-top: 20px;  /* Add spacing from the feedback cards */
+    display: block;
+    margin-top: 20px;
     padding: 14px 25px;
     font-size: 1.1rem;
     background-color: #2980B9;
@@ -145,6 +155,29 @@ h1, h2, h3 {
     background-color: #163266;
     transform: translateY(-4px);
 }
+
+/* Responsive Design for Tablets and Smaller Screens */
+@media screen and (max-width: 768px) {
+    .dashboard-nav {
+        top: 180px; /* Adjust nav position on smaller screens */
+    }
+
+    .dashboard-content {
+        margin-top: 220px; /* Adjust content margin for smaller screens */
+    }
+}
+
+/* For Extra Small Devices (phone in portrait mode) */
+@media screen and (max-width: 480px) {
+    .dashboard-nav {
+        top: 175px; /* Adjust nav position for small screens */
+    }
+
+    .dashboard-content {
+        margin-top: 240px; /* Adjust content margin for small screens */
+    }
+}
+
 
 @media (max-width: 500px) {
     .dashboard-nav ul {
@@ -426,7 +459,7 @@ h1, h2, h3 {
 /*Settings*/
 .container {
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 320px auto;
     padding: 20px;
     background-color: white;
     border-radius: 8px;
