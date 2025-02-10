@@ -146,6 +146,72 @@ h1, h2, h3 {
     transform: translateY(-4px);
 }
 
+@media (max-width: 500px) {
+    .dashboard-nav ul {
+        gap: 8px; 
+        flex-direction: row;
+        padding: 0;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .dashboard-nav li {
+        max-width: 80px;
+        text-align: center;
+    }
+
+    .dashboard-nav a {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+    }
+
+    .dashboard-logo {
+        max-width: 80px;
+    }
+
+    /* Adjusting header */
+    .dashboard-header {
+        height: 180px;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    /* Making cards more compact */
+    .metric-card, .feedback-card {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* Stack metrics and feedback cards */
+    .metrics-cards, .feedback {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Adjusting input fields */
+    .add-product-form input, .add-product-form textarea {
+        font-size: 0.85rem;
+        padding: 8px;
+    }
+
+    /* Adjusting button size */
+    .add-product-form .submit-btn {
+        font-size: 0.85rem;
+        padding: 10px 15px;
+    }
+
+    /* Table adjustments */
+    .products-table th, .products-table td {
+        font-size: 0.85rem;
+        padding: 6px;
+    }
+
+    /* Adjusting text size in cards */
+    .metric-card p, .feedback-card p {
+        font-size: 1.2rem;
+    }
+}
+
 /* Table Styles */
 .users-table, .orders-table, .products-table {
     width: 100%;
@@ -186,6 +252,53 @@ h1, h2, h3 {
 .products-table .delete-btn:hover {
     background-color: #e2f1fc;
     transform: translateY(-3px);
+}
+
+/* Responsive Design for Tablets and Smaller Screens (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .users-table, .orders-table, .products-table {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .users-table th, .orders-table th, .products-table th, 
+    .users-table td, .orders-table td, .products-table td {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+    
+    /* Ensuring content wraps appropriately on mobile */
+    .users-table, .orders-table, .products-table {
+        display: block;
+        white-space: nowrap;
+    }
+
+    /* Action buttons: Smaller padding and font size */
+    .users-table .view-btn, .orders-table .accept-btn, .orders-table .reject-btn, 
+    .products-table .edit-btn, .products-table .delete-btn {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+    }
+}
+
+/* For Extra Small Devices (phone in portrait mode, max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .users-table, .orders-table, .products-table {
+        font-size: 0.85rem;
+    }
+
+    .users-table th, .orders-table th, .products-table th,
+    .users-table td, .orders-table td, .products-table td {
+        padding: 6px 8px;
+    }
+
+    /* Adjust action buttons to fit smaller screens */
+    .users-table .view-btn, .orders-table .accept-btn, .orders-table .reject-btn, 
+    .products-table .edit-btn, .products-table .delete-btn {
+        font-size: 0.75rem;
+        padding: 5px 8px;
+    }
 }
 
 /* Action Buttons - Accept & Reject */
@@ -254,56 +367,15 @@ h1, h2, h3 {
     background-color: #0b4f7c;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .dashboard-nav ul {
-        gap: 18px;
-    }
-
-    .dashboard-header {
-        height: 220px;
-    }
-
-    .dashboard-content {
-        padding: 25px 40px;
-    }
-}
-
+/* Mobile Responsiveness for Input Fields */
 @media (max-width: 768px) {
-    .dashboard-header {
-        flex-direction: column;
+    .add-product-form {
+        padding: 20px;
+        gap: 20px;
     }
 
-    .dashboard-nav ul {
-        flex-direction: column;
-    }
-
-    .dashboard-nav li {
-        max-width: none;
-    }
-
-    .dashboard-logo {
-        max-width: 130px;
-    }
-
-    .metric-card, .feedback-card {
-        width: 48%;
-        margin-bottom: 20px;
-    }
-
-    .metrics-cards, .feedback {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .metric-card p, .feedback-card p {
-        font-size: 1.4rem;
-    }
-
-    .dashboard-logo {
-        max-width: 100px;
+    .add-product-form label {
+        font-size: 1rem;
     }
 
     .add-product-form input, .add-product-form textarea {
@@ -311,16 +383,47 @@ h1, h2, h3 {
         padding: 12px;
     }
 
-    .add-product-form .submit-btn {
-        font-size: 1rem;
+    /* Small input fields for price and quantity on mobile */
+    .add-product-form input[type="number"] {
+        width: 100%;
+        padding: 12px;
     }
 
-    .products-table th, .products-table td {
+    .add-product-form .submit-btn {
+        padding: 14px 24px;
         font-size: 1rem;
-        padding: 10px;
     }
 }
 
+/* Additional adjustments for very small screens (e.g., smartphones in portrait mode) */
+@media (max-width: 480px) {
+    .add-product-form {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .add-product-form label {
+        font-size: 0.95rem;
+    }
+
+    .add-product-form input, .add-product-form textarea {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    /* Adjust Price and Quantity inputs further for smaller screens */
+    .add-product-form input[type="number"] {
+        width: 45%; /* Make price and quantity inputs smaller */
+        padding: 10px;
+    }
+
+    .add-product-form .submit-btn {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+}
+
+/*Settings*/
 .container {
     max-width: 1200px;
     margin: 20px auto;
@@ -419,4 +522,69 @@ h1 {
     text-decoration: none;
     cursor: pointer;
 }
-    
+
+@media (max-width: 500px) {
+    .dashboard-nav ul {
+        gap: 8px; 
+        flex-direction: row;
+        padding: 0;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .dashboard-nav li {
+        max-width: 80px;
+        text-align: center;
+    }
+
+    .dashboard-nav a {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+    }
+
+    .dashboard-logo {
+        max-width: 80px;
+    }
+
+    /* Adjusting header */
+    .dashboard-header {
+        height: 180px;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    /* Making cards more compact */
+    .metric-card, .feedback-card {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* Stack metrics and feedback cards */
+    .metrics-cards, .feedback {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Adjusting input fields */
+    .add-product-form input, .add-product-form textarea {
+        font-size: 0.85rem;
+        padding: 8px;
+    }
+
+    /* Adjusting button size */
+    .add-product-form .submit-btn {
+        font-size: 0.85rem;
+        padding: 10px 15px;
+    }
+
+    /* Table adjustments */
+    .products-table th, .products-table td {
+        font-size: 0.85rem;
+        padding: 6px;
+    }
+
+    /* Adjusting text size in cards */
+    .metric-card p, .feedback-card p {
+        font-size: 1.2rem;
+    }
+}
