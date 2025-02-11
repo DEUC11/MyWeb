@@ -522,7 +522,7 @@ h1 {
 #userModal {
     display: none; 
     position: fixed; /* Fixed position */
-    z-index: 1; /* Make sure it sits on top of other elements */
+    z-index: 2000; /* Make sure it sits on top of other elements */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -540,6 +540,7 @@ h1 {
     width: 60%; /* Adjust width of the modal */
     max-width: 600px; /* Max width */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for better visibility */
+    z-index: 2001;
 }
 
 .close-btn {
